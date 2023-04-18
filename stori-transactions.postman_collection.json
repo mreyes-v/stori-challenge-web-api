@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "6ade19e0-0142-41ea-90e7-f6ec2ca8f9b2",
+		"name": "stori",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5998868"
+	},
+	"item": [
+		{
+			"name": "transactions/get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5001/transactions/get",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"transactions",
+						"get"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transactions/insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"date\": \"2022-04-16\",\n        \"id\": \"4\",\n        \"uid\": \"b22d3de8-6cc4-41d3-af24-da42a926d389\",\n        \"type\": \"credit\",\n        \"transaction\": \"500\"\n    },\n    {\n        \"date\": \"2022-03-16\",\n        \"id\": \"3\",\n        \"uid\": \"28720648-8371-449d-a643-3d5e733aa94f\",\n        \"type\": \"debit\",\n        \"transaction\": \"-400\"\n    },\n    {\n        \"date\": \"2022-05-16\",\n        \"id\": \"3\",\n        \"uid\": \"2bef8176-d1d1-43a8-b1f3-ac61cbb6d167\",\n        \"type\": \"debit\",\n        \"transaction\": \"-100\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5001/transactions/insert",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"transactions",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transactions/upload",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5001/transactions/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"transactions",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
