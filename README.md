@@ -30,10 +30,10 @@ computed to sent it via email using AWS SES.
 The easiest way to run the project is using Docker:
 ```
 docker build --tag stori-web-api .
-docker run -p 5001:5002 stori-transactions
+docker run -p 5002:5001 stori-web-api
 ```
 
-Now you can go to http://localhost:5002/transactions/upload to upload a .csv file or use the provided Postman
+Now you can go to http://localhost:5001/transactions/upload to upload a .csv file or use the provided Postman
 collection to test the endpoints.
 
 __Important__: AWS keys cannot be provided in the repo, please ask for them if needed.
