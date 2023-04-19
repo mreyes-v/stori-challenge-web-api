@@ -46,8 +46,9 @@ def transoform(data):
 
 def get():
     try:
-        id = request.args.get('id')
-        res = transactions.get_transactions(id)
+        uid = request.args.get('uid')
+        date = request.args.get('date')
+        res = transactions.get_transactions(uid, date)
         return res
     except Exception as e:
         return str(e), 400

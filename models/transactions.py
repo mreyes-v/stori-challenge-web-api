@@ -11,15 +11,18 @@ class Transactions:
     def __init__(self):
         self.table = dynamodb.Table('stori-transactions')
 
-    def get_transactions(self, id=None):
+    def get_transactions(self, uid=None, date=None):
         try:
-            if id is None:
+            if uid is None and date is None:
                 response = self.table.scan()
                 return response['Items']
 
-            response = self.table.get_item(Key={
-                "id": Decimal(id)
-            })
+            response = self.table.get_item(
+                Key={
+                    "uid": str(uid),
+                    "date": date
+                }
+            )
             if 'Item' in response:
                 return response['Item']
             raise 'Item not found'
@@ -37,7 +40,7 @@ class Transactions:
                     batch.put_item(
                         Item={
                             'uid': str(item['uid']),
-                            'id': item['id'],
+                            'id': str(item['id']),
                             'date': str(item['date']),
                             'transaction': Decimal(item['transaction']),
                             'type': item['type']
